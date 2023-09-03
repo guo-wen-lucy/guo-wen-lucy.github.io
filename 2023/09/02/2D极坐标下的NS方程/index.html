@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Steady Navier-Stokes Equations with imcompressible condition:  \left\{ \begin{aligned} \mathbf{u}\cdot \grad \mathbf{u} + \grad p &amp;&#x3D; \varepsilon \Delta \mathbf{u}\\ \text{div }  \mathbf{u}&amp;&#x3D; 0. \end{a">
+        <meta name="description" content="Steady Navier-Stokes Equations with imcompressible condition:  \left\{ \begin{aligned} \mathbf{u}\cdot \nabla \mathbf{u} + \nabla p &amp;&#x3D; \varepsilon \Delta \mathbf{u}\\ \text{div }  \mathbf{u}&amp;&#x3D; 0. \end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2D极坐标下的稳态NS方程">
 <meta property="og:url" content="http://example.com/2023/09/02/2D%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%8B%E7%9A%84NS%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Steady Navier-Stokes Equations with imcompressible condition:  \left\{ \begin{aligned} \mathbf{u}\cdot \grad \mathbf{u} + \grad p &amp;&#x3D; \varepsilon \Delta \mathbf{u}\\ \text{div }  \mathbf{u}&amp;&#x3D; 0. \end{a">
+<meta property="og:description" content="Steady Navier-Stokes Equations with imcompressible condition:  \left\{ \begin{aligned} \mathbf{u}\cdot \nabla \mathbf{u} + \nabla p &amp;&#x3D; \varepsilon \Delta \mathbf{u}\\ \text{div }  \mathbf{u}&amp;&#x3D; 0. \end">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-02T09:07:51.000Z">
-<meta property="article:modified_time" content="2023-09-03T16:27:59.947Z">
+<meta property="article:modified_time" content="2023-09-03T16:29:51.979Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
@@ -269,8 +269,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-04 00:27:59</span>
-            <span class="mobile">2023-09-04 00:27:59</span>
+            <span class="desktop">2023-09-04 00:29:51</span>
+            <span class="mobile">2023-09-04 00:29:51</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -309,15 +309,15 @@
 <script type="math/tex; mode=display">
 \left\{
 \begin{aligned}
-\mathbf{u}\cdot \grad \mathbf{u} + \grad p &= \varepsilon \Delta \mathbf{u}\\
+\mathbf{u}\cdot \nabla \mathbf{u} + \nabla p &= \varepsilon \Delta \mathbf{u}\\
 \text{div }  \mathbf{u}&= 0.
 \end{aligned}
 \right .</script><p>Set $\mathbf{u} = u_1\mathbf{e}_x+u_2\mathbf{e}_y=u\mathbf{e}_r+v\mathbf{e}_\theta$. </p>
 <p>For any scalar function $f=f(r,\theta)$, since $d\mathbf{r}=dr\mathbf{e}_r+rd\theta\mathbf{e}_\theta$, and</p>
 <script type="math/tex; mode=display">
-\grad f \cdot d\mathbf{r} := df =  \partial_r f dr + \partial_\theta f d\theta \text{ (chain rule)},</script><p>we obtain the gradient formula in polar coordinate</p>
+\nabla f \cdot d\mathbf{r} := df =  \partial_r f dr + \partial_\theta f d\theta \text{ (chain rule)},</script><p>we obtain the gradient formula in polar coordinate</p>
 <script type="math/tex; mode=display">
-\grad f = \partial_r f\mathbf{e}_r + \frac{1}{r} \partial_\theta f\mathbf{e}_\theta.</script><p>By the definition of divergence</p>
+\nabla f = \partial_r f\mathbf{e}_r + \frac{1}{r} \partial_\theta f\mathbf{e}_\theta.</script><p>By the definition of divergence</p>
 <script type="math/tex; mode=display">
 \text{div } F = \lim_{V\to 0}\frac{1}{V}\oint_{\partial V} F d\mathbf{S},</script><p>we deduce the divergence of any vector field $\mathbf{f} = f_r(r,\theta)\mathbf{e}_r+f_\theta(r,\theta)\mathbf{e}_\theta$ </p>
 <script type="math/tex; mode=display">
@@ -329,8 +329,8 @@
 \Delta = \text{div } \nabla  = \frac{1}{r}\partial_r (r\partial_r ) + \frac{1}{r^2}\partial_\theta^2.</script><p><u>Now we deduce the Navier-Stokes equation in polar coordinate by each part:</u></p>
 <p>The <strong>advection terms</strong> in cartesian coordinates are</p>
 <script type="math/tex; mode=display">
-\mathbf{u}\cdot \grad \mathbf{u } = \begin{pmatrix}\mathbf{u}\cdot \grad u_1\\
-\mathbf{u}\cdot \grad u_2\end{pmatrix}.</script><p><strong>Rmk:</strong> The equation components should be consistent with the origins. But since $\mathbf{u}\cdot \nabla u_i (i=1,2)$ are scalars, one can write them as dot product in polar coordinates. Denote</p>
+\mathbf{u}\cdot \nabla \mathbf{u } = \begin{pmatrix}\mathbf{u}\cdot \nabla u_1\\
+\mathbf{u}\cdot \nabla u_2\end{pmatrix}.</script><p><strong>Rmk:</strong> The equation components should be consistent with the origins. But since $\mathbf{u}\cdot \nabla u_i (i=1,2)$ are scalars, one can write them as dot product in polar coordinates. Denote</p>
 <script type="math/tex; mode=display">
 \mathrm{I_{a,c}} =u\partial_r u_1+\frac{1}{r} v\partial_\theta u_1,\quad
 \mathrm{II_{a,c}} =u\partial_r u_2+\frac{1}{r} v\partial_\theta u_2.</script><p>Recombine the two terms into polar coordinate (the transform from $(\mathbf{e}_x,\mathbf{e}_y)\to (\mathbf{e}_r,\mathbf{e}_\theta)$), we obtain:</p>
@@ -369,7 +369,7 @@ u\partial_r v + \frac{1}{v}(\partial_\theta v +u) + \frac{1}{r}\partial_\theta P
         <li><strong>Created at:</strong> 2023-09-02 17:07:51</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-09-04 00:27:59
+                <strong>Updated at:</strong> 2023-09-04 00:29:51
             </li>
         
         <li>
