@@ -27,10 +27,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/Users/wenguo/blog/source/images/Prandtl-Boundary-Layers-in-an-Infinitely-Long-Convergent-Channel/image-20230929014841577.png">
 <meta property="og:image" content="http://example.com/Users/wenguo/blog/source/images/Prandtl-Boundary-Layers-in-an-Infinitely-Long-Convergent-Channel/image-20230929015001746.png">
-<meta property="og:image" content="http://example.com/Users/wenguo/blog/source/images/Prandtl-Boundary-Layers-in-an-Infinitely-Long-Convergent-Channel/image-20230929015059314.png">
-<meta property="og:image" content="http://example.com/Users/wenguo/blog/source/images/Prandtl-Boundary-Layers-in-an-Infinitely-Long-Convergent-Channel/image-20230929015122516.png">
 <meta property="article:published_time" content="2023-09-28T17:43:14.000Z">
-<meta property="article:modified_time" content="2023-09-28T17:51:28.151Z">
+<meta property="article:modified_time" content="2023-10-08T13:12:33.562Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="边界层，角形区域">
 <meta name="twitter:card" content="summary">
@@ -274,8 +272,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-29 01:51:28</span>
-            <span class="mobile">2023-09-29 01:51:28</span>
+            <span class="desktop">2023-10-08 21:12:33</span>
+            <span class="mobile">2023-10-08 21:12:33</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -331,7 +329,7 @@
 \left\{\begin{array}{l}
 u u_r+\frac{v u_\theta}{r}-\frac{v^2}{r}+p_r-\varepsilon\left(u_{r r}+\frac{u_r}{r}+\frac{u_{\theta \theta}}{r^2}-\frac{2 v_\theta}{r^2}-\frac{u}{r^2}\right)=0, \\
 u v_r+\frac{v v_\theta}{r}+\frac{u v}{r}+\frac{p_\theta}{r}-\varepsilon\left(v_{r r}+\frac{v_r}{r}+\frac{v_{\theta \theta}}{r^2}+\frac{2 u_\theta}{r^2}-\frac{v}{r^2}\right)=0, \\
-u_r+\frac{u}{r}+v_\theta=0
+u_r+\frac{u}{r}+\frac{v_\theta}{r}=0
 \end{array}\right.\tag{1.1}</script><p>$\Omega = \{(r,\theta)|r&gt;0,|\theta|&lt;g(r)\}$, $0&lt;\alpha\le \beta\le \frac{\pi}{2}$.</p>
 <p><img  
                      lazyload
@@ -398,7 +396,7 @@ A^0(-\alpha)=A^0(\alpha)=0 \\
 <li>Singularity at $0$, vanishing at $\infty$.</li>
 <li>General shape, inviscid flow non-shear $\Rightarrow$ difficulties in stability analysis.</li>
 </ol>
-<p>Particularly, we assume a <strong>curvature decreasing</strong> condition (curvature $\kappa(s):=|\frac{\mathrm{d}}{\mathrm{d}s}\arctan(\frac{\dot{y}(s)}{\dot{x}(s)})|$): the boundaries</p>
+<p>Particularly, we assume a <strong>curvature decreasing</strong> condition (curvature $\kappa(s):=|\frac{\mathrm{d}}{\mathrm{d}s}\arctan(\frac{\dot{y}(s)}{\dot{x}(s)})|=|\frac{\mathrm{d}}{\mathrm{d}s}\tilde{\theta}(s)|$): the boundaries</p>
 <script type="math/tex; mode=display">
 \Gamma^{ \pm}=\left\{(x(s), \pm y(s)) \in \mathbb{R}^2 \mid x(s)=r(s) \cos (g(r(s))), y(s)=r(s) \sin (g(r(s))), s \geqslant 0\right\}</script><p>satisfies</p>
 <script type="math/tex; mode=display">
@@ -450,28 +448,87 @@ A^0(-\alpha)=A^0(\alpha)=0 \\
 \xi:=\frac{1}{\beta} \ln r-\int_r^{\infty} \frac{1}{\rho}\left(\psi_\theta(\rho, \theta)-\frac{1}{\beta}\right) \mathrm{d} \rho .</script><p>Then</p>
 <script type="math/tex; mode=display">
 \partial_r \xi = \frac{\partial_\theta \psi}{r},\quad \frac{\partial_\theta \xi}{r} = -\partial_r \psi, \quad \xi\sim\left\{\begin{array}{l}\frac{1}{\beta}\ln r,\quad r\to \infty,\\\frac{1}{\alpha}\ln r,\quad r\to 0.\end{array}\right.</script><p>$(\xi,\psi):\Omega \to (-\infty,\infty)\times (-1,1)$. And $\partial_\xi,\partial_\psi$ are non-dimensional derivatives.</p>
+<p>Define the magnitude of the normalized Euler flow $\psi$,</p>
+<script type="math/tex; mode=display">
+J:=|\nabla_{r,\theta}\psi|^2=\frac{\psi_\theta^2}{r^2}+\psi_r^2.</script><p>The main result of this section is the <strong>pressure favorable condition:</strong></p>
 <blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/Users/wenguo/blog/source/images/Prandtl-Boundary-Layers-in-an-Infinitely-Long-Convergent-Channel/image-20230929015059314.png"
-                      alt="image-20230929015059314" style="zoom:50%;" 
-                ></p>
-</blockquote>
-<p>Key points:</p>
+<p><strong>Lemma 2.3.</strong> If $\Gamma^{ \pm}$are smooth curves satisfying (1.11) and (1.12), then there exists a constant $\mu&gt;0$, such that</p>
+<script type="math/tex; mode=display">
+-\frac{1}{2} \frac{J_{\xi}(\xi, \pm 1)}{J(\xi, \pm 1)} \geqslant \mu \text { for any } \xi \in \mathbb{R}</script><p>Moreover, since $\frac{J_{\xi}}{J}$ is harmonic, it holds that</p>
+<script type="math/tex; mode=display">
+\inf _{\mathbb{R} \times(-1,1)}-\frac{1}{2} \frac{J_{\xi}(\xi, \psi)}{J(\xi, \psi)} \geqslant \mu .</script></blockquote>
+<p>which means that <strong>the Euler flow on the boundary preserves increasing along the $-\xi$ direction.</strong></p>
+<p><u>A sketchy proof of this lemma:</u></p>
+<p><u>Step1.</u> From conditions (1.11) &amp; (1.12), one obtain</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+|r^k \frac{d^k}{dr^k}g(r)|\le \frac{C_k}{r}, \text{ for } r\ge 1,\\
+|r^k \frac{d^k}{dr^k}g(r)|\le C_k r,\text{ for } r<1.
+\end{array}\tag{2.1}</script><p>  Key points:</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 0&\le \cos \beta \le \dot x\le \cos\alpha\\
 0&<\sin\alpha\le \dot y\le\sin\beta.
-\end{aligned}\Rightarrow |rg'(r)|=\frac{r}{x}|\frac{\dot y x - \dot x y}{x\dot x+y\dot y}|\quad\left\{\begin{array}{l}\le Cr,\quad r\le 1\\\le r\cdot\frac{M}{C r^2},\quad r\ge 1\end{array}\right..</script><blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/Users/wenguo/blog/source/images/Prandtl-Boundary-Layers-in-an-Infinitely-Long-Convergent-Channel/image-20230929015122516.png"
-                      alt="image-20230929015122516" style="zoom:50%;" 
-                ></p>
-</blockquote>
-
+\end{aligned}\Rightarrow |rg'(r)|=\frac{r}{x}|\frac{\dot y x - \dot x y}{x\dot x+y\dot y}|\quad\left\{\begin{array}{l}\le Cr,\quad r\le 1\\\le r\cdot\frac{M}{C r^2},\quad r\ge 1\end{array}\right..</script><p><u>Step2.</u> Analysis on equations (1.13) through the <u>blow-up technique</u> and <u>weighted energy method</u>, and obtain</p>
+<ul>
+<li><p>the existence</p>
+</li>
+<li><p>the asymptotic behavior for $\lambda&lt;\frac{1}{2}$ (determined by the energy method)</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& \left|r^k \partial_r^k \partial_\theta^l\left[\psi(r, \theta)-\frac{\theta}{\beta}\right]\right| \leqslant \frac{C_{k, l}(\lambda)}{r^\lambda}, \text { for } r \geqslant 1, \\
+& \left|r^k \partial_r^k \partial_\theta^l\left[\psi(r, \theta)-\frac{\theta}{\alpha}\right]\right| \leqslant C_{k, l}(\lambda) r^\lambda, \text { for } r \leqslant 1,
+\end{aligned}\tag{2.4}</script></li>
+<li><p>the existence of positive lower bound</p>
+<script type="math/tex; mode=display">
+\inf_{\Omega} \psi_\theta \ge b>0.</script></li>
+</ul>
+<p><strong>Rmk:</strong> After blow-up and change of variables $\tilde{\psi}=\psi - \frac{\theta}{g(e^t)}$, the source term $\tilde{f}$ of Poisson equation for $\tilde{\psi}$ satisfies the exponentially decreasing conditions both $t\to \pm\infty$, then $\tilde{\psi}$ preserves this property through energy method with weight $\cosh (2\lambda t)$. This indicates the relation between channel shape and the asymptotic behavior of Euler flow.</p>
+<p><u>Step3.</u> The asymptotic behaviors for $J$ as $\xi\to \pm\infty$ (uniformly for $\psi\in [-1,1]$, taking $\lambda=\frac{1}{4}$)</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\left|\partial_{\xi}^k \partial_\psi^l\left[\frac{1}{J} \frac{\partial^j J}{\partial \xi^j}-(-2 \beta)^j\right]\right| \leqslant C_{k, l, j} e^{-\frac{\beta}{4} \xi} \quad \text { for } \xi \geqslant 0, \\
+\left|\partial_{\xi}^k \partial_\psi^l\left[\frac{1}{J} \frac{\partial^j J}{\partial \xi^j}-(-2 \alpha)^j\right]\right| \leqslant C_{k, l, j} e^{\frac{\alpha}{4} \xi} \quad \text { for } \xi<0, \end{gathered}
+\tag{2.10}</script><script type="math/tex; mode=display">
+\begin{gathered}
+\left|\partial_{\xi}^k \partial_\psi^l\left[\frac{1}{J} \frac{\partial^j J}{\partial \psi^j}\right]\right| \leqslant C_{k, l, j} e^{-\frac{\beta}{4} \xi} \quad \text { for } \xi \geqslant 0, \\
+\left|\partial_{\xi}^k \partial_\psi^l\left[\frac{1}{J} \frac{\partial^j J}{\partial \psi^j}\right]\right| \leqslant C_{k, l, j} e^{\frac{\alpha}{4} \xi} \quad \text { for } \xi<0,
+\end{gathered}\tag{2.11}</script><p>Particularly, </p>
+<script type="math/tex; mode=display">
+\lim_{\xi\to \infty}-\frac{1}{2}\frac{J_\xi}{J} = \beta, \quad \lim_{\xi\to-\infty}-\frac{1}{2}\frac{J_\xi}{J}=\alpha.\tag{2.12}</script><p><u>Step4.</u> The rest of the proof: </p>
+<p>Observe that $\frac{1}{2}\frac{J_\xi}{J}=\frac{1}{2}\partial_\xi(\ln J)=\partial_\xi(\ln |\nabla_{x,y} \psi|)=\partial_\xi(\ln |\nabla_{x,y}^\perp \psi|)$, where $\ln$ is a holomorphic function. The argument of $\nabla^\perp_{x,y}\psi$ is well-defined since $\psi_y&gt;0$ in $\Omega$ by strong maximum principle. Define $q := \arctan (-\frac{\psi_x}{\psi_y})$, then by the Cauchy-Riemann equations</p>
+<script type="math/tex; mode=display">
+-\frac{1}{2}\frac{J_\xi}{J} = q_\psi.</script><p>Since on $\Gamma_\pm, \psi(x(s),y(s))\equiv \pm 1$, then $\frac{\dot y}{\dot x}=-\frac{\psi_x}{\psi_y}|_{\Gamma_\pm}$. Therefore $q$ solves</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+-\partial_{\xi}^2 q-\partial_\psi^2 q=0, \quad(\xi, \psi) \in \mathbb{R} \times(-1,1) \\
+\left.q\right|_{\psi= \pm 1}= \pm \tilde{\theta} \\
+\left.q\right|_{\xi \rightarrow \infty}=\beta \psi,\left.\quad q\right|_{\xi \rightarrow-\infty}=\alpha \psi,
+\end{array}\right.\tag{2.15}</script><p>Notice that $q_{\psi\psi}|_{\psi=1}=-\frac{1}{J}\frac{\mathrm{d}\kappa}{\mathrm{d}s}-\frac{\kappa}{J^{1/2}}q_\psi$, by maximum principle and Hopf’s lemma,</p>
+<script type="math/tex; mode=display">
+\inf_{\R\times(-1,1)} q_\psi (\xi,\psi)\ge \mu.</script><h2 id="2-The-Existence-of-the-Global-Solution-to-the-Prandtl-Equations"><a href="#2-The-Existence-of-the-Global-Solution-to-the-Prandtl-Equations" class="headerlink" title="2. The Existence of the Global Solution to the Prandtl Equations"></a>2. The Existence of the Global Solution to the Prandtl Equations</h2><h3 id="Derivation-of-the-Prandtl-equations-for-Phi"><a href="#Derivation-of-the-Prandtl-equations-for-Phi" class="headerlink" title="Derivation of the Prandtl equations for $\Phi$"></a>Derivation of the Prandtl equations for $\Phi$</h3><p>The Navier-Stokes equation for stream function $\Phi$ (1.8) in variables $(\xi,\psi)$ reads</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+J \Phi_\psi \partial_{\xi}\left(J \Delta_{\xi, \psi} \Phi\right)-J \Phi_{\xi} \partial_\psi\left(J \Delta_{\xi, \psi} \Phi\right)+\varepsilon J \Delta_{\xi, \psi}\left(J \Delta_{\xi, \psi} \Phi\right)=0 \\
+\left.\Phi\right|_{\psi=1}=\frac{Q}{2},\left.\quad \Phi\right|_{\psi=-1}=-\frac{Q}{2} \\
+\left.\Phi_\psi\right|_{\psi=1}=\left.\Phi_\psi\right|_{\psi=-1}=0
+\end{array}\right.\tag{1.16}</script><p>Inspired by Prandtl we know that the thickness of boundary layer should be $\sqrt{\varepsilon}$, and by the divergence-free condition, can write</p>
+<script type="math/tex; mode=display">
+\Phi(\xi,\psi)=\Phi^{E,0}(\xi,\psi)+\sqrt{\varepsilon}\Big(\Phi^{E,1}(\xi,\psi)+\Phi^{B,1}(\xi,\frac{1+\psi}{\sqrt{\varepsilon}})\Big)+o(\sqrt{\varepsilon})</script><p>near $\Gamma_-$. To normalize (==how?==), rewrite</p>
+<script type="math/tex; mode=display">
+\Phi(\xi,\psi) = \sqrt{\varepsilon Q}\Big(\frac{1}{\sqrt{\varepsilon}}\Phi^{E,0}(\xi,\psi)+\Phi^{E,1}(\xi,\psi)+\Phi^{B,1}\big(\xi,\sqrt{\frac{Q}{\varepsilon}}(1+\psi)\big)+o(1)\Big)=:\sqrt{\varepsilon Q}\tilde{\Phi}(\xi,\eta).</script><p>Here $(\xi,\eta)=(\xi,\sqrt{\frac{Q}{\varepsilon}}(1+\psi))$ are called <strong>Prandtl variables</strong>. Thus, (1.16) reads</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& J \tilde{\Phi}_\eta \partial_{\xi}\left(J\left(\frac{\varepsilon}{Q} \tilde{\Phi}_{\xi \xi}+\tilde{\Phi}_{\eta \eta}\right)\right)-J \tilde{\Phi}_{\xi} \partial_\eta\left(J\left(\frac{\varepsilon}{Q} \tilde{\Phi}_{\xi \xi}+\tilde{\Phi}_{\eta \eta}\right)\right) \\
+& +J\left(\frac{\varepsilon}{Q} \partial_{\xi}^2+\partial_\eta^2\right)\left(J\left(\frac{\varepsilon}{Q} \tilde{\Phi}_{\xi \xi}+\tilde{\Phi}_{\eta \eta}\right)\right)=0 .
+\end{aligned}\tag{1.17}</script><p>Take the formal limit $\varepsilon\to 0$, we obtain an equation for $\Phi^p(\xi,\eta):= \Phi^E(\xi,-1)+\Phi^B(\xi,\eta)$</p>
+<script type="math/tex; mode=display">
+J(\xi,-1)\Phi^p_\eta\partial_\xi\big(J(\xi,-1)\Phi^p_{\eta\eta}\big)-J^2(\xi,-1)\Phi^p_\xi\Phi^p_{\eta\eta\eta}+J^2(\xi,-1)\Phi^p_{\eta\eta\eta\eta}=0.</script><p>Since $J$ is positive, the above equation can be rewritten as</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}\Phi^p_\eta\Phi^p_{\xi\eta\eta} + \frac{J_\xi(\xi,-1)}{J(\xi,-1)}\Phi^p_\eta\Phi^p_{\eta\eta}-\Phi^p_\xi\Phi^p_{\eta\eta\eta}+\Phi^p_{\eta\eta\eta\eta}=0\\
+\Rightarrow \partial_\eta\Big(\Phi^p_\eta\Phi^p_{\xi\eta}-\Phi^p_\xi\Phi^p_{\eta\eta}+\frac{1}{2}\frac{J_\xi(\xi,-1)}{J(\xi,-1)}(\Phi^p_\eta)^2+\Phi^p_{\eta\eta\eta}\Big)=0\\
+\Rightarrow \Phi^p_\eta\Phi^p_{\xi\eta}-\Phi^p_\xi\Phi^p_{\eta\eta}+\frac{1}{2}\frac{J_\xi(\xi,-1)}{J(\xi,-1)}(\Phi^p_\eta)^2+\Phi^p_{\eta\eta\eta} + C(\xi) =0.
+\end{array}</script>
         </div>
 
         
@@ -483,7 +540,7 @@ A^0(-\alpha)=A^0(\alpha)=0 \\
         <li><strong>Created at:</strong> 2023-09-29 01:43:14</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-09-29 01:51:28
+                <strong>Updated at:</strong> 2023-10-08 21:12:33
             </li>
         
         <li>
@@ -560,7 +617,7 @@ A^0(-\alpha)=A^0(\alpha)=0 \\
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Prandtl Boundary Layers in an Infinitely Long Convergent Channel</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Settings"><span class="nav-text">0.Settings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-The-Leading-order-Euler-Flow-and-Favorable-Pressure-Condition"><span class="nav-text">1. The Leading-order Euler Flow and Favorable Pressure Condition</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Settings"><span class="nav-text">0.Settings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-The-Leading-order-Euler-Flow-and-Favorable-Pressure-Condition"><span class="nav-text">1. The Leading-order Euler Flow and Favorable Pressure Condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-The-Existence-of-the-Global-Solution-to-the-Prandtl-Equations"><span class="nav-text">2. The Existence of the Global Solution to the Prandtl Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Derivation-of-the-Prandtl-equations-for-Phi"><span class="nav-text">Derivation of the Prandtl equations for $\Phi$</span></a></li></ol></li></ol>
 
     </div>
 </div>
